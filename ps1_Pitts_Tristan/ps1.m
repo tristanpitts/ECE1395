@@ -31,7 +31,7 @@ cast(cputime - t2, 'double')
 xx = cast(x, 'int32');
 y = [];
 for i=1:size(xx)
-    if mod(xx(i),2) == 0 && xx(i) > 0 && xx(i) < 100 %if xx(i) is even and between 0 and 100 
+    if mod(xx(i),2) == 0 && xx(i) > 0 && xx(i) < 100 %if xx(i) is even and between 0 and 100
         y(size(y)+1)=xx(i);
     end
 end
@@ -63,10 +63,10 @@ F = inv(C)*D %resulting vector  will give x, y and z
 x1=[0.5 0 1.5];
 x2=[1 1 0];
 fprintf("The L1 norm of x1 (the sum of all elements in x1) is: %d\n", sum(x1))
-fprintf("The L2 norm of x1 (the square root of the sum of the squares of all elements in x1) is: %f\n", sumsqr(x1)^(0.5))
+fprintf("The L2 norm of x1 (the square root of the sum of the squares of all elements in x1) is: %f\n", (x1(1)^2 + x1(2)^2 + x1(3)^2)^(0.5))
 fprintf("Matlab's norm of x1: %f\n\n", norm(x1))
 fprintf("The L1 norm of x2 (the sum of all elements in x2) is: %d\n", sum(x2))
-fprintf("The L2 norm of x2 (the square root of the sum of the squares of all elements in x2) is: %f\n", sumsqr(x2)^(0.5))
+fprintf("The L2 norm of x2 (the square root of the sum of the squares of all elements in x2) is: %f\n", (x2(1)^2 + x2(2)^2 + x2(3)^2)^(0.5))
 fprintf("Matlab's norm of x2: %f\n\n", norm(x2))
 
 %Section 5
