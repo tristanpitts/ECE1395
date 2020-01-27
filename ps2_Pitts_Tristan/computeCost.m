@@ -9,5 +9,4 @@ function J = computeCost(x, y, theta)
   temp = J / (2 * size(x, 1));
 
   J = temp;
-
 end
