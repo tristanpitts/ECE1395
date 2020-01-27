@@ -9,8 +9,9 @@ Y = A(:, 2);
 
 %4b
 scatter(X,Y,'red','X');
-xlabel("Population")
-ylabel("Profit")
+xlabel("Population in 10,000s")
+ylabel("Profit in $10,000s")
+saveas(gcf,'output/ps2-4-b.png')
 
 %set dummy variable x1 in every row to 1
 X = [ones(size(X,1),1), X(:,1)];
@@ -35,17 +36,18 @@ iteration = 1:1:1500;
 plot(iteration, cost)
 xlabel("Iteration")
 ylabel("Cost")
+saveas(gcf,'output/ps2-4-e.png')
 fprintf("The computed model parameters are: theta1 = %f and theta2 = %f\n", theta(1), theta(2))
 
 %4f
-fprintf("using the obtained model parameters, the profit in a city of population 35000 is estimated to be %f\n", theta(1) + theta(2)*35000)
-fprintf("using the obtained model parameters, the profit in a city of population 70000 is estimated to be %f\n", theta(1) + theta(2)*70000)
+fprintf("using the obtained model parameters, the profit in a city of population 35000 is estimated (in $10,000s) to be %f\n", theta(1) + theta(2)*35)
+fprintf("using the obtained model parameters, the profit in a city of population 70000 is estimated (in $10,000s) to be %f\n", theta(1) + theta(2)*70)
 
 %4g
 thetan = normalEqn(X, Y);
 
-fprintf("using the normalEqn function, the profit in a city of population 35000 is estimated to be %f\n", thetan(1) + thetan(2)*35000)
-fprintf("using the normalEqn function, the profit in a city of population 70000 is estimated to be %f\n", thetan(1) + thetan(2)*70000)
+fprintf("using the normalEqn function, the profit in a city of population 35000 is estimated (in $10,000s) to be %f\n", thetan(1) + thetan(2)*35)
+fprintf("using the normalEqn function, the profit in a city of population 70000 is estimated (in $10,000s) to be %f\n", thetan(1) + thetan(2)*70)
 
 %4h
 iteration = 1:1:250;
@@ -65,6 +67,7 @@ axis([0 10 0 100])
 xlabel("Iteration")
 ylabel("Cost")
 hold off
+saveas(gcf,'output/ps2-4-h.png')
 
 
 %question 5
@@ -73,7 +76,7 @@ A = csvread('input/hw2_data2.txt');
 X = [A(:, 1), A(:,2)];
 Y = A(:, 3);
 
-fprintf("The size of the feature matrix X is %d and the size of the label vector Y is %d\n", size(X), size(Y))
+fprintf("The size of the feature matrix X is [%d, %d] and the size of the label vector Y is [%d, %d]\n", size(X), size(Y))
 
 stdevx1 = std(X(:,1));
 meanx1 = mean(X(:,1));
@@ -93,6 +96,7 @@ iteration = 1:1:1500;
 plot(iteration, cost)
 xlabel("Iteration")
 ylabel("Cost")
+saveas(gcf,'output/ps2-5-b.png')
 fprintf("The computed model parameters are: theta1 = %f, theta2 = %f, theta3 = %f\n", theta(1), theta(2), theta(3))
 
 %5c
